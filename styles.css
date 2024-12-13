@@ -1,0 +1,179 @@
+body {
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Manrope";
+    height: 100vh;
+    margin: 0;
+}
+
+.main {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    width: 45%;
+}
+
+.main .image img {
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    width: 250px;
+    height: 286px;
+    object-fit: cover;
+    object-position: 0;
+}
+
+.main .text {
+    padding: 1.5rem;
+}
+
+.main .text h1{
+    color: hsl(217, 19%, 35%);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.main .text p {
+    color: hsl(214, 17%, 51%);
+    font-size: 0.95rem;
+}
+
+.main .text .prof {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.main .text .prof .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.main .text .prof img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.main .text .prof .info h1 {
+    font-size: 0.95rem;
+}
+
+.main .text .prof .info p {
+    margin-bottom: 0;
+    margin-top: 6px;
+    font-size: 0.85rem;
+}
+
+.main .text .prof .share {
+    background-color: hsl(210, 46%, 95%);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.main .text .prof .share:active {
+    background-color: hsl(217, 19%, 35%);
+}
+
+.main .text .prof .share:active img {
+    filter: brightness(0) invert(1);
+}
+
+.main .text .prof .share img {
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+}
+
+.main .text .prof .share-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 0.5rem;
+    position: absolute;
+    right: -16%;
+    top: -137%;
+    padding: 0.5rem;
+}
+
+.main .text .prof .share-wrapper .social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.main .text .prof .share-wrapper p {
+    font-size: 0.8rem;
+    letter-spacing: 0.3rem;
+    margin-left: 1rem;
+    color: hsl(212, 23%, 69%);
+}
+
+.main .text .prof .share-wrapper .social img {
+    border-radius: 0;
+    height: auto;
+    width: auto;
+}
+
+.main .text .prof .share-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid hsl(217, 19%, 35%);
+    width: 0;
+    height: 0;
+}
+
+@media screen and (max-width:769px) {
+    .main {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .main .image img {
+        object-fit: initial;
+        object-position: initial;
+        height: auto;
+        border-top-left-radius:1rem;
+        border-top-right-radius:1rem;
+        border-bottom-left-radius:0;
+        width: 100%;
+    }
+
+    .main .text .prof .share-wrapper {
+        width: 100%;
+        right: -3%;
+        top: 2%;
+        border-bottom-left-radius:1rem;
+        border-bottom-right-radius:1rem;
+        justify-content: flex-start;
+    }
+
+    .main .text .prof .share-wrapper::after {
+        display: none;
+    }
+
+    .main .text .prof .share {
+        z-index: 1;
+        margin-top: 0.5rem;
+    }
+}
